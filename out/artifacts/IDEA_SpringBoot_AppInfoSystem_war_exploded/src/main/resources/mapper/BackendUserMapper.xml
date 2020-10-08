@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 后台  sql 映射-->
+<!-- namespace的名字需要跟接口的类名一致 -->
+<mapper namespace="com.xie.daomapper.BackendUserDao">
+    <sql id="backend_user">
+        username,
+        password,
+    </sql>
+
+    <!--用户登录验证-->
+    <select id="Userlogin" parameterType="backendUser" resultType="BackendUser">
+        SELECT
+        <include refid="backend_user"/>
+        FROM backend_user WHERE userCode = #{userCode} AND userPassword = #{userPassword}
+    </select>
+
+
+</mapper>

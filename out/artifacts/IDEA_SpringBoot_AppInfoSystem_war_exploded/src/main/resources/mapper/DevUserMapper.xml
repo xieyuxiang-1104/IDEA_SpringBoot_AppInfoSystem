@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 开发者   sql 映射-->
+<!-- namespace的名字需要跟接口的类名一致 -->
+<mapper namespace="com.xie.daomapper.DevUserDao">
+
+
+    <!--用户登录验证-->
+    <select id="DElogin" parameterType="devUser" resultType="DevUser">
+        SELECT
+        <include refid="dev_user"/>
+        FROM dev_user WHERE devCode = #{devCode} AND devPassword = #{devPassword}
+    </select>
+
+</mapper>
