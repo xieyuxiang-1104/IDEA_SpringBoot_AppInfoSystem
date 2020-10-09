@@ -10,9 +10,7 @@
 
     <!--用户登录验证-->
     <select id="DElogin" parameterType="devUser" resultType="DevUser">
-        SELECT
-        <include refid="dev_user"/>
-        FROM dev_user WHERE devCode = #{devCode} AND devPassword = #{devPassword}
+        SELECT devCode,devPassword FROM dev_user  WHERE devCode = #{devCode} AND devPassword = #{devPassword}
     </select>
 
 </mapper>

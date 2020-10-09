@@ -13,9 +13,7 @@
 
     <!--用户登录验证-->
     <select id="Userlogin" parameterType="backendUser" resultType="BackendUser">
-        SELECT
-        <include refid="backend_user"/>
-        FROM backend_user WHERE userCode = #{userCode} AND userPassword = #{userPassword}
+        SELECT * FROM backend_user WHERE userCode = #{userCode} AND userPassword = #{userPassword}
     </select>
 
 
