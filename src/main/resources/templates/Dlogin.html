@@ -1,15 +1,19 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>开发</title>
+
 </head>
 <body>
 <!--<%@include file="common/header.jsp"%>-->
 <div class="page-title">
     <div class="title_left">
         <h3>
-            欢迎你：${devUserSession.devName }<strong> | 角色：开发者账户</strong>
+            <!--/*@thymesVar id="name" type="java.lang.String"*/-->
+            欢迎：<p th:text="${name}"/>
+            <!-- 欢迎你：${devUserSession.devName }<strong> | 角色：开发者账户</strong>-->
         </h3>
     </div>
 </div>

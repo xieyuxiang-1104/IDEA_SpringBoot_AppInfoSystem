@@ -13,7 +13,7 @@
 
     <!--用户登录验证-->
     <select id="Userlogin" parameterType="backendUser" resultType="BackendUser">
-        SELECT * FROM backend_user WHERE userCode = #{userCode} AND userPassword = #{userPassword}
+        SELECT userCode,userPassword FROM backend_user WHERE userCode = #{userCode} AND userPassword = #{userPassword}
     </select>
 
 

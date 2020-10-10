@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 //后台
 @Service
 public class BackendUserServiceImp implements BackendUserService {
@@ -16,9 +18,11 @@ public class BackendUserServiceImp implements BackendUserService {
     @Autowired
     private BackendUserDao backendUserDao;
 
-    //登录
     @Override
-    public BackendUser Userlogin(@Param("userCode") String userCode, @Param("userPassword") String userPassword) {
+    public List<BackendUser> Userlogin(String userCode, String userPassword) {
         return backendUserDao.Userlogin(userCode, userPassword);
     }
+
+    //登录
+
 }

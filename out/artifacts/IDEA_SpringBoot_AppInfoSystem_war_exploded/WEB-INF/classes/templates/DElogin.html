@@ -27,7 +27,7 @@
 </head>
 <script>
 
-    function onSubmitData() {
+    /*function onSubmitData() {
         $.ajax({
             url: "/login/devuser_Login",
             type: 'POST',
@@ -35,14 +35,14 @@
             dataType: "JSON",
             success: function (data) {
                 for (var i = 0; i < data.length; i++) {    //遍历data数组
-                   
-                    alert(data[i]);
+
+                    alert(data[i].devCode,data[i].devPassword);
                 }
             }
 
 
         });
-    }
+    }*/
 
 
 </script>
@@ -55,28 +55,28 @@
     <div class="login_wrapper">
         <div class="animate form login_form">
             <section class="login_content">
-                <!-- <form action="/login/devuser_Login" method="post">-->
-                <h1>APP开发者平台</h1>
-                <div>
-                    <input class="form-control" name="devCode" placeholder="请输入用户名" required="" type="text"/>
-                </div>
-                <div>
-                    <input class="form-control" name="devPassword" placeholder="请输入密码" required="" type="password"/>
-                </div>
-                <span>${error }</span>
-                <div>
-                    <button class="btn btn-success" onclick="onSubmitData()" type="button">登 录</button>
-                    <button class="btn btn-default" type="reset">重　填</button>
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="separator">
+                <form action="/login/devuser_Login" method="post">
+                    <h1>APP开发者平台</h1>
                     <div>
-                        <p>©2020 All Rights Reserved. </p>
+                        <input class="form-control" name="devCode" placeholder="请输入用户名" required="" type="text"/>
                     </div>
-                </div>
-                <!--</form>-->
+                    <div>
+                        <input class="form-control" name="devPassword" placeholder="请输入密码" required="" type="password"/>
+                    </div>
+                    <span>${error }</span>
+                    <div>
+                        <button class="btn btn-success" type="submit">登 录</button>
+                        <button class="btn btn-default" type="reset">重　填</button>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="separator">
+                        <div>
+                            <p>©2020 All Rights Reserved. </p>
+                        </div>
+                    </div>
+                </form>
             </section>
         </div>
     </div>
